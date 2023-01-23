@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+</head>
+<body>
+    
+    <table id="tabella"> 
+        <thead>
+            <th> id </th>
+            <th> nome </th>
+            <th> cognome </th>
+            <th> email </th>
+            <th> codice fiscale</th>
+            <th> indirizzo </th>
+        </thead>
+    </table>
+
+    <script>
+
+        const arr = [
+            {
+                id : 1,
+                nome: "alessio",
+                cognome : "palmese",
+                email : "alecdsds@gmail.com",
+                codiceFiscale : "2435ncja44",
+                indirizzo: "via  raff"
+
+            },
+            {
+                id : 1,
+                nome: "antonio",
+                cognome : "rossi",
+                email : "alefhdusisds@gmail.com",
+                codiceFiscale : "2435ncja44",
+                indirizzo: "via  orazio"
+
+            },
+            {
+                id : 1,
+                nome: "antonio",
+                cognome : "rossi",
+                email : "alefhdusisds@gmail.com",
+                codiceFiscale : "2435ncja44",
+                indirizzo: "via  orazio"
+
+            }
+        ]
+
+        const table = document.getElementById("tabella")
+
+        arr.forEach(element => {
+            const riga = document.createElement("tr");
+            
+            Object.keys(element).forEach(key => {
+                const colonna = document.createElement("td")
+                const text = document.createTextNode(element[key])
+                colonna.appendChild(text)
+                riga.appendChild(colonna)
+            })
+
+            table.appendChild(riga)
+        });
+
+    </script>
+</body>
+</html>
